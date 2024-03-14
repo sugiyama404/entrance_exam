@@ -4,15 +4,30 @@
   <img src="resource/AI画像分析見本.gif" alt="animated" width="400">
 </p>
 
+![ubuntu](https://img.shields.io/badge/Ubuntu-E95420?&logo=ubuntu&logoColor=white)
+![gitignore](https://img.shields.io/badge/gitignore%20io-204ECF?logo=gitignoredotio&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?logo=javascript&logoColor=F7DF1E)
+[![Python](https://img.shields.io/badge/Python-3.9-blue.svg?logo=python&logoColor=blue)](https://www.python.org/)
+[![Docker](https://img.shields.io/badge/Docker-20.10-blue.svg?logo=docker&logoColor=white)](https://www.docker.com/)
+[![Docker Compose](https://img.shields.io/badge/Docker%20Compose-v2.2-blue.svg)](https://docs.docker.com/compose/)
+[![Flask](https://img.shields.io/badge/Flask-2.1.2-blue.svg?logo=flask&logoColor=white)](https://palletsprojects.com/p/flask/)
+[![Pytest](https://img.shields.io/badge/pytest-6.2.5-blue.svg)](https://pytest.org/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![jQuery](https://img.shields.io/badge/jQuery-3.6.0-blue.svg?logo=jquery&logoColor=white)](https://jquery.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.1.3-blue.svg?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+![Commit Msg](https://img.shields.io/badge/Commit%20message-Eg-brightgreen.svg)
+![Code Cmnt](https://img.shields.io/badge/code%20comment-Ja-brightgreen.svg)
+
 # 概要
 このアプリケーションは、AIが画像の分析と評価を行い、画像を分類します。
 
 # 機能一覧
-
-
-# 実装技術一覧
-
-
++ 画像保存機能
++ API通信機能
++ DB登録機能
++ 画面表示機能
 
 
 要件
