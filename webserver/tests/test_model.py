@@ -36,7 +36,7 @@ dummy_data_failure = AiAnalysisLog(
 )
 
 """
-成功判定データを入れた場合の関数が正常に動作することをテストする
+成功判定データを入れた場合の正常処理テスト
 insert_data() 関数のテスト
 Args:
     mock_session: Sessionモック
@@ -49,7 +49,7 @@ def test_insert_data_success(mock_session):
     assert mock_session.commit.called_once
 
 """
-失敗判定データを入れた場合の関数が正常に動作することをテストする
+失敗判定データを入れた場合の正常処理テスト
 insert_data() 関数のテスト
 Args:
     mock_session: Sessionモック
