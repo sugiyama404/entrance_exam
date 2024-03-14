@@ -4,80 +4,164 @@
   <img src="resource/AI画像分析見本.gif" alt="animated" width="400">
 </p>
 
-# 概要
+![ubuntu](https://img.shields.io/badge/Ubuntu-E95420?&logo=ubuntu&logoColor=white)
+[![Docker](https://img.shields.io/badge/Docker-2CA5E0?logo=docker&logoColor=white)](https://www.docker.com/)
+![Git](https://img.shields.io/badge/GIT-E44C30?logo=git&logoColor=white)
+![gitignore](https://img.shields.io/badge/gitignore%20io-204ECF?logo=gitignoredotio&logoColor=white)
+![bash](https://img.shields.io/badge/Shell_Script-121011?logo=gnu-bash&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?logo=javascript&logoColor=F7DF1E)
+[![Python](https://img.shields.io/badge/Python-3.8.8-blue.svg?logo=python&logoColor=blue)](https://www.python.org/)
+[![Docker Compose](https://img.shields.io/badge/Docker%20Compose-v3-blue.svg)](https://docs.docker.com/compose/)
+[![Flask](https://img.shields.io/badge/Flask-3.0.2-blue.svg?logo=flask&logoColor=white)](https://palletsprojects.com/p/flask/)
+[![Pytest](https://img.shields.io/badge/pytest-8.1.1-blue.svg)](https://pytest.org/)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0.28-blue.svg)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0.32-blue.svg?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![jQuery](https://img.shields.io/badge/jQuery-3.7.1-blue.svg?logo=jquery&logoColor=white)](https://jquery.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-blue.svg?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+![Commit Msg](https://img.shields.io/badge/Commit%20message-Eg-brightgreen.svg)
+![Code Cmnt](https://img.shields.io/badge/code%20comment-Ja-brightgreen.svg)
+
+## 概要
 このアプリケーションは、AIが画像の分析と評価を行い、画像を分類します。
 
-# 機能一覧
+## 機能一覧
++ 画像保存機能
++ API通信機能
++ DB登録機能
++ 画面表示機能
 
+## インストール
 
-# 実装技術一覧
+1. 以下のコマンドを実行して、開発サーバーを起動します。
 
+```bash
+docker compose up
+```
 
+2. アプリケーションにアクセスします。
 
+http://localhost:8080 にアクセスすると、Flaskアプリケーションが起動していることを確認できます。
 
-要件
-画像ファイルのパスを受け取る
-架空のAPIにリクエストを投げる
-レスポンスをデータベースに保存する
-実装
-画像ファイルのパスを受け取る
-架空のAPIの仕様に基づいて、レスポンスを想定する
-想定したレスポンスをデータベースに保存する
-データベース
-データベースには、以下のテーブルを作成します。
+## ディレクトリ構成
 
-画像情報テーブル
-画像ID (primary key)
-画像ファイルパス
-クラス名
-信頼度
+```text
+.
+├── README.md
+├── apserver
+├── dbserver
+├── docker-compose.yml
+├── resource
+└── webserver
+    ├── Dockerfile
+    ├── main.py
+    ├── models
+    │   ├── __init__.py
+    │   ├── base.py
+    │   └── dao.py
+    ├── requirements.txt
+    ├── settings.ini
+    ├── settings.py
+    ├── static
+    │   ├── bootstrap.min.css
+    │   ├── bootstrap.min.js
+    │   ├── image
+    │   └── jquery-3.7.1.min.js
+    ├── templates
+    │   └── index.html
+    ├── tests
+    │   ├── __init__.py
+    │   ├── test_main.py
+    │   └── test_model.py
+    └── utils
+        ├── __init__.py
+        └── helper.py
+```
+
+#### apserver
+アプリケーションサーバー関連ファイルなどが置かれます。
+
+#### dbserver
+データベースサーバー関連の設定ファイルなどが置かれます。具体的には、データベースの種類、接続情報、スキーマ定義ファイルなどです。
+
+#### resource
+Readme.mdで使用される静的ファイルなどのリソースが置かれます。
+
+#### webserver
+Webアプリケーション本体が置かれています。
+
+## 設定ファイル
+
+#### docker-compose.yml
+Docker Compose の設定ファイルです。このファイルには、アプリケーションを構成するコンテナとその設定情報が定義されています。
+
+#### settings.ini
+設定ファイル (INI形式)です。アプリケーションの設定情報などを記述します。
+
+#### settings.py
+設定ファイル (Python形式)です。settings.ini と同様に、アプリケーションの設定情報などを記述します。
+
+## テスト
+
+このプロジェクトは、pytest を使用してテストされています。
+
+### テストディレクトリ構成
+
+```text
+webserver
+├── tests
+│   ├── __init__.py
+│   ├── test_main.py
+│   └── test_model.py
+```
+
++ init.py: テストディレクトリ初期化ファイルです。
++ test_main.py: main.py のテストコードです。
++ test_model.py: models ディレクトリ内のモデルのテストコードです。
+
 実行方法
-Python 3.7以上をインストールする
-requirements.txt に記載されているライブラリをインストールする
-main.py を実行する
-使用例
-Python
-python main.py /path/to/image.jpg
-コードは注意してご使用ください。
-テスト
-tests ディレクトリにテストコードを用意しています。
+以下のコマンドでテストを実行できます。
 
-Python
-python -m unittest tests
-コードは注意してご使用ください。
-注意点
-実際のAPIは存在しないため、想定されるレスポンスはあくまでも架空のものとなります。
-データベースへの接続情報は、config.ini ファイルで設定する必要があります。
-今後の課題
-実際のAPIと連携できるようにする
-画像ファイルのアップロード機能を追加する
-Web UI を作成する
-謝辞
-本アプリケーションは、Hugging Face: https://huggingface.co/ のライブラリを使用しています。
-ライセンス
-MIT License
+```bash
+docker compose exec web pytest tests/ -v
+```
 
-その他
-本アプリケーションは、学習用サンプルとして提供しています。
-本アプリケーションを利用したことによるいかなる損害も負いかねます。
-Mock-up
-APIの仕様に基づいて、想定されるレスポンスの例を以下に示します。
+#### テスト対象
+以下の項目がテスト対象となります。
 
-JSON
-{
-  "image_id": "1234567890",
-  "class_name": "cat",
-  "confidence": 0.95
-}
-コードは注意してご使用ください。
-このレスポンスは、image_id が "1234567890" である画像が "cat" クラスに属し、その信頼度が 95% であることを示しています。
++ main.py の関数
++ models ディレクトリ内のモデル
 
-提出物
-README.md
-main.py
-config.ini
-requirements.txt
-tests/
+#### テスト項目
+以下の項目がテスト項目となります。
+
+##### main.py の関数
++ GETメソッドによるアクセステスト
++ POSTメソッドによる正常処理テスト
++ POSTメソッドによるファイルエラーテスト
++ POSTメソッドによるAPIエラーテスト
++ POSTメソッドによるDBエラーテスト
+
+##### models ディレクトリ内のモデル
++ 成功判定データを入れた場合の正常処理テスト
++ 失敗判定データを入れた場合の正常処理テスト
+
+#### テスト結果
+
+<p align="center">
+  <img src="resource/テスト結果.png" alt="animated">
+</p>
+
+
+
+
+
+
+
+
+
+
 
 
 
