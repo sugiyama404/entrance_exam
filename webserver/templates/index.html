@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI画像分析</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+
+<body class="bg-light">
+    <div class="container text-center">
+        <h1>AI画像分析</h1>
+        <form action="{{url_for('index')}}" method="POST" enctype="multipart/form-data" class="mb-3 novalidate">
+            <div class="form-group">
+                <label for="image_file">画像ファイルを選択</label>
+                <input type="file" name="file" id="image_file" class="form-control-file">
+                <button type="submit" class="btn btn-primary" id="upload_button">送信</button>
+            </div>
+        </form>
+        <small>画像の拡張子は「png, jpg, jpeg」の中から選択して下さい。</small><br>
+        <small>画像の容量は1MB以下のファイルを選択してください。</small>
+        {% if message %}
+        {% if result %}
+        <div class="alert alert-info" role="alert">
+            {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+        {% endif %}
+        {% if name %}
+        <p>ファイル名: {{ name }}</p>
+        {% endif %}
+        {% if image_path %}
+        <img src="{{ image_path }}" class="img-fluid mb-3">
+        {% endif %}
+        {% if dclass %}
+        <p>分析結果</p>
+        <p>クラス: {{ dclass }}</p>
+        {% endif %}
+        {% if dcof %}
+        <p>信頼度: {{ dcof }}</p>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script>
+        const MAX_FILE_SIZE = 1048576; // 1MB
+        const imageFile = document.getElementById('image_file');
+        const uploadButton = document.getElementById('upload_button');
+
+        imageFile.addEventListener('change', () => {
+            const file = imageFile.files[0];
+            if (file.size > MAX_FILE_SIZE) {
+                alert('ファイルサイズが大きすぎます。1MB以下のファイルを選択してください。');
+                uploadButton.disabled = true;
+            } else {
+                uploadButton.disabled = false;
+            }
+        });
+    </script>
+</body>
+
+</html>
