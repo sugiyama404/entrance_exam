@@ -29,7 +29,7 @@ jobs:
 
       - name: テストの実行
         run: |
-          docker compose exec -m 512m -T web pytest tests/ -v --log-cli-level=DEBUG
+          docker compose exec -T web pytest tests/ -v --log-cli-level=DEBUG
 
       - name: テスト結果の表示
         run: |
