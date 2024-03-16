@@ -3,7 +3,6 @@ name: "infra preview & test"
 on:
   push:
     branches:
-      - feature-githubactions
       - main
     paths:
       - apserver/**
