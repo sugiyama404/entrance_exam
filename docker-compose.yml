@@ -4,7 +4,7 @@ services:
     restart: always
     build: ./webserver
     container_name: "ee_web"
-    command: bash -c "sleep 2 && python main.py"
+    command: ["bash","-c","sleep 2 && python main.py"]
     tty: true
     environment:
       MYSQL_USER: eeMySql1
