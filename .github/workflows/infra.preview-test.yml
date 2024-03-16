@@ -29,7 +29,7 @@ jobs:
 
       - name: テストの実行
         run: |
-          docker compose exec -T web pytest tests/ -v --init
+          docker compose exec -T web pytest tests/ -v
 
       - name: テスト結果の表示
         run: |
