@@ -25,12 +25,12 @@ jobs:
 
       - name: Docker コンテナの起動
         run: |
-          docker-compose up -d
+          docker compose up -d
 
       - name: テストの実行
         run: |
-          docker-compose exec web pytest tests/ -v
+          docker compose exec web pytest tests/ -v
 
       - name: テスト結果の表示
         run: |
-          docker-compose logs web
+          docker compose logs web
