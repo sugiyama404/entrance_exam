@@ -1,0 +1,35 @@
+name: "infra preview & test"
+
+on:
+  push:
+    branches:
+      - feature-githubactions
+      - main
+    paths:
+      - apserver/**
+      - webserver/**
+      - .github/workflows/**
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Docker コンテナの起動
+        run: |
+          docker-compose up -d
+
+      - name: テストの実行
+        run: |
+          docker-compose exec web pytest tests/ -v
+
+      - name: テスト結果の表示
+        run: |
+          docker-compose logs web
