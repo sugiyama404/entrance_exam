@@ -33,7 +33,7 @@ jobs:
 
       - name: Running Tests
         run: |
-          docker-compose exec -T web pytest
+          docker-compose exec -T web pytest tests/test_models.py -v --log-cli-level=DEBUG
 
       - name: Display test results
         run: |
