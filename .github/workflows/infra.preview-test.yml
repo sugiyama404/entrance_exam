@@ -8,6 +8,7 @@ on:
     paths:
       - apserver/**
       - webserver/**
+      - dbserver/**
       - .github/workflows/**
 
 defaults:
