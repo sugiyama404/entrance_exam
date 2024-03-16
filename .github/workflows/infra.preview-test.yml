@@ -25,7 +25,7 @@ jobs:
 
       - name: Launching the Docker Container
         run: |
-          docker compose up -d
+          docker-compose up -d
 
       - name: Sleep for 5 seconds
         run: sleep 5s
@@ -33,8 +33,8 @@ jobs:
 
       - name: Running Tests
         run: |
-          docker compose exec -T web pytest
+          docker-compose exec -T web pytest
 
       - name: Display test results
         run: |
-          docker compose logs web
+          docker-compose logs web
